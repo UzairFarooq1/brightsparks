@@ -1,27 +1,31 @@
-import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import React, { useState } from "react";
+import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    branch: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    branch: "",
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your inquiry! We will contact you soon.');
+    console.log("Form submitted:", formData);
+    alert("Thank you for your inquiry! We will contact you soon.");
   };
 
   return (
@@ -30,28 +34,35 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to give your child the best education? Get in touch with us to learn more 
-            about our programs or schedule a visit to any of our branches.
+            Ready to give your child the best education? Get in touch with us to
+            learn more about our programs or schedule a visit to any of our
+            branches.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>
-            <h3 className="text-3xl font-bold text-gray-800 mb-8">Get In Touch</h3>
-            
+            <h3 className="text-3xl font-bold text-gray-800 mb-8">
+              Get In Touch
+            </h3>
+
             <div className="space-y-6 mb-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                   <MapPin className="w-5 h-5 text-blue-600 mr-3" />
                   Pangani Branch (Main)
                 </h4>
-                <p className="text-gray-600 mb-2">Pamba Road, Pangani, Nairobi</p>
+                <p className="text-gray-600 mb-2">
+                  Pamba Road, Pangani, Nairobi
+                </p>
                 <p className="text-gray-600 mb-2">
                   <Phone className="w-4 h-4 inline mr-2" />
                   +254 746656600
                 </p>
-                <p className="text-sm text-blue-600">Over 15 years of experience</p>
+                <p className="text-sm text-blue-600">
+                  Over 15 years of experience
+                </p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
@@ -64,7 +75,7 @@ const Contact = () => {
                   <Phone className="w-4 h-4 inline mr-2" />
                   +254 798 672239
                 </p>
-                <p className="text-sm text-green-600">14 years of operation</p>
+                <p className="text-sm text-green-600">Growing Campus</p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
@@ -75,9 +86,9 @@ const Contact = () => {
                 <p className="text-gray-600 mb-2">Ngao Road, Nairobi</p>
                 <p className="text-gray-600 mb-2">
                   <Phone className="w-4 h-4 inline mr-2" />
-                  +254 746656600
+                  +254 798 672239
                 </p>
-                <p className="text-sm text-orange-500">Growing campus</p>
+                <p className="text-sm text-orange-500">3 Years of Experience</p>
               </div>
             </div>
 
@@ -105,10 +116,15 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">
+              Send Us a Message
+            </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Full Name *
                 </label>
                 <input
@@ -124,7 +140,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Email Address *
                 </label>
                 <input
@@ -140,7 +159,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Phone Number
                 </label>
                 <input
@@ -155,7 +177,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="branch" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="branch"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Preferred Branch
                 </label>
                 <select
@@ -173,7 +198,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Message *
                 </label>
                 <textarea
