@@ -94,7 +94,7 @@ const About = () => {
               </div>
             </div>
             <img
-              src="../public/graduation.jpg"
+              src="/assets/graduation.jpg"
               alt="Students Learning"
               className="rounded-lg shadow-md w-full h-auto object-cover"
             />
@@ -102,7 +102,7 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <img
-              src="../public/storytelling.jpg"
+              src="/assets/storytelling.jpg"
               alt="School Vision"
               className="rounded-lg shadow-md w-full h-auto object-cover"
             />
