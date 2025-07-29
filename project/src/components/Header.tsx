@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,130 +10,76 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const isActive = (path: string) => {
-    return location.pathname === path;
-  };
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <header className="bg-white shadow-lg">
-      {/* Top bar with contact info */}
-      <div className="bg-skyish text-white py-2">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-between items-center text-sm">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center">
-                <Phone className="w-4 h-4 mr-2" />
-                <span>Pangani: +254 746656600</span>
-              </div>
-              <div className="flex items-center">
-                <Phone className="w-4 h-4 mr-2" />
-                <span>Parklands: +254 798 672239</span>
-              </div>
+      {/* Top Contact Bar */}
+      <div className="bg-skyish text-white py-2 text-sm">
+        <div className="container mx-auto px-4 flex justify-between items-center flex-wrap">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1">
+              <Phone className="w-4 h-4" />
+              <span>Pangani: +254 746 656600</span>
             </div>
-            <div className="flex items-center">
-              <Mail className="w-4 h-4 mr-2" />
-              <span>info@brightsparks.ac.ke</span>
+            <div className="flex items-center gap-1">
+              <Phone className="w-4 h-4" />
+              <span>Parklands: +254 798 672239</span>
             </div>
+          </div>
+          <div className="flex items-center gap-1">
+            <Mail className="w-4 h-4" />
+            <span>info@brightsparks.ac.ke</span>
           </div>
         </div>
       </div>
 
-      {/* Main navigation */}
+      {/* Navigation */}
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center">
+          {/* Logo and Title */}
+          <Link to="/" className="flex items-center gap-3">
             <img
-              src="../public/brightsparks.jpg"
+              src="/brightsparks.jpg"
               alt="Bright Sparks Logo"
-              className="w-50 h-20  mr-3"
+              className="w-20 h-20 object-cover"
             />
             <div>
               <h1 className="text-2xl font-bold text-gray-800">
                 Bright Sparks School
               </h1>
-              <p className="text-sm text-gray-600 italic">
+              <p className="text-sm italic text-gray-600">
                 Learners Today, Leaders Tomorrow
               </p>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-8">
-            <li>
-              <Link
-                to="/"
-                className={`font-medium transition-colors ${
-                  isActive("/")
-                    ? "text-skyish"
-                    : "text-gray-700 hover:text-skyish"
-                }`}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-                className={`font-medium transition-colors ${
-                  isActive("/about")
-                    ? "text-blue-600"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/curriculum"
-                className={`font-medium transition-colors ${
-                  isActive("/curriculum")
-                    ? "text-blue-600"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
-              >
-                Curriculum
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/branches"
-                className={`font-medium transition-colors ${
-                  isActive("/branches")
-                    ? "text-blue-600"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
-              >
-                Branches
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/activities"
-                className={`font-medium transition-colors ${
-                  isActive("/activities")
-                    ? "text-blue-600"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
-              >
-                Activities
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                className={`font-medium transition-colors ${
-                  isActive("/contact")
-                    ? "text-blue-600"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
-              >
-                Contact
-              </Link>
-            </li>
+            {[
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+              { name: "Curriculum", path: "/curriculum" },
+              { name: "Branches", path: "/branches" },
+              { name: "Activities", path: "/activities" },
+              { name: "Contact", path: "/contact" },
+            ].map((item) => (
+              <li key={item.path}>
+                <Link
+                  to={item.path}
+                  className={`font-medium transition-colors ${
+                    isActive(item.path)
+                      ? "text-skyish"
+                      : "text-gray-700 hover:text-skyish"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-gray-700 hover:text-blue-600"
             onClick={toggleMenu}
@@ -146,87 +92,31 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation Menu */}
         {isMenuOpen && (
           <ul className="md:hidden mt-4 space-y-2 border-t pt-4">
-            <li>
-              <Link
-                to="/"
-                className={`block py-2 transition-colors ${
-                  isActive("/")
-                    ? "text-blue-600"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
-                onClick={toggleMenu}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-                className={`block py-2 transition-colors ${
-                  isActive("/about")
-                    ? "text-blue-600"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
-                onClick={toggleMenu}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/curriculum"
-                className={`block py-2 transition-colors ${
-                  isActive("/curriculum")
-                    ? "text-blue-600"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
-                onClick={toggleMenu}
-              >
-                Curriculum
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/branches"
-                className={`block py-2 transition-colors ${
-                  isActive("/branches")
-                    ? "text-blue-600"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
-                onClick={toggleMenu}
-              >
-                Branches
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/activities"
-                className={`block py-2 transition-colors ${
-                  isActive("/activities")
-                    ? "text-blue-600"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
-                onClick={toggleMenu}
-              >
-                Activities
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                className={`block py-2 transition-colors ${
-                  isActive("/contact")
-                    ? "text-blue-600"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
-                onClick={toggleMenu}
-              >
-                Contact
-              </Link>
-            </li>
+            {[
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
+              { name: "Curriculum", path: "/curriculum" },
+              { name: "Branches", path: "/branches" },
+              { name: "Activities", path: "/activities" },
+              { name: "Contact", path: "/contact" },
+            ].map((item) => (
+              <li key={item.path}>
+                <Link
+                  to={item.path}
+                  onClick={toggleMenu}
+                  className={`block py-2 transition-colors ${
+                    isActive(item.path)
+                      ? "text-skyish"
+                      : "text-gray-700 hover:text-skyish"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         )}
       </nav>
