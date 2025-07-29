@@ -18,7 +18,7 @@ const Hero = () => {
               Providing quality education from early childhood to secondary
               levels since 2010. We nurture young minds in a caring, inclusive
               environment with individualized attention and a comprehensive
-              curriculum including CBC, Islamic Studies, and CRE.
+              curriculum including CBE, Islamic Studies, and CRE.
             </p>
             <div className="flex flex-wrap gap-4">
               <button className="bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-lg font-semibold transition-colors">
@@ -43,7 +43,7 @@ const Hero = () => {
             </div>
             <div className="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">
               <Award className="w-8 h-8 mb-3 text-orange-300" />
-              <h3 className="font-semibold mb-2">CBC Curriculum</h3>
+              <h3 className="font-semibold mb-2">CBE Curriculum</h3>
               <p className="text-sm text-blue-100">Modern Education Approach</p>
             </div>
             <div className="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">

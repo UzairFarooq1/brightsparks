@@ -77,7 +77,7 @@ const About = () => {
               </li>
               <li className="flex items-start">
                 <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></div>
-                <span className="text-gray-600">CBC curriculum with religious education</span>
+                <span className="text-gray-600">CBE curriculum with religious education</span>
               </li>
             </ul>
           </div>

@@ -1,51 +1,70 @@
-import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle, Users, Award } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Send,
+  MessageCircle,
+  Users,
+  Award,
+} from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    branch: '',
-    inquiryType: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    branch: "",
+    inquiryType: "",
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your inquiry! We will contact you soon.');
+    console.log("Form submitted:", formData);
+    alert("Thank you for your inquiry! We will contact you soon.");
   };
 
-  const handleWhatsApp = (branch: 'pangani' | 'parklands') => {
+  const handleWhatsApp = (branch: "pangani" | "parklands") => {
     const numbers = {
-      pangani: '+254746656600',
-      parklands: '+254798672239'
+      pangani: "+254746656600",
+      parklands: "+254798672239",
     };
     const message = encodeURIComponent(
-      `Hello! I'm interested in learning more about Bright Sparks School ${branch === 'pangani' ? 'Pangani' : 'Parklands'} branch. Could you please provide me with more information?`
+      `Hello! I'm interested in learning more about Bright Sparks School ${
+        branch === "pangani" ? "Pangani" : "Parklands"
+      } branch. Could you please provide me with more information?`
     );
-    const whatsappUrl = `https://wa.me/${numbers[branch].replace(/[^0-9]/g, '')}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
+    const whatsappUrl = `https://wa.me/${numbers[branch].replace(
+      /[^0-9]/g,
+      ""
+    )}?text=${message}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-green-600 text-white py-20">
+      <section className="bg-custom-gradient text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Ready to give your child the best education? Get in touch with us to learn more 
-            about our programs or schedule a visit to any of our branches.
+            Ready to give your child the best education? Get in touch with us to
+            learn more about our programs or schedule a visit to any of our
+            branches.
           </p>
         </div>
       </section>
@@ -56,75 +75,62 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-8">Get In Touch</h2>
-              
+              <h3 className="text-3xl font-bold text-gray-800 mb-8">
+                Get In Touch
+              </h3>
+
               <div className="space-y-6 mb-8">
                 <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                     <MapPin className="w-5 h-5 text-blue-600 mr-3" />
                     Pangani Branch (Main)
-                  </h3>
-                  <p className="text-gray-600 mb-2">Pamba Road, Pangani, Nairobi</p>
-                  <p className="text-gray-600 mb-3">
+                  </h4>
+                  <p className="text-gray-600 mb-2">
+                    Pamba Road, Pangani, Nairobi
+                  </p>
+                  <p className="text-gray-600 mb-2">
                     <Phone className="w-4 h-4 inline mr-2" />
                     +254 746656600
                   </p>
-                  <p className="text-sm text-blue-600 mb-3">Over 15 years of experience</p>
-                  <button 
-                    onClick={() => handleWhatsApp('pangani')}
-                    className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors inline-flex items-center"
-                  >
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    WhatsApp
-                  </button>
+                  <p className="text-sm text-blue-600">
+                    Over 15 years of experience
+                  </p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                     <MapPin className="w-5 h-5 text-green-600 mr-3" />
                     Parklands Branch
-                  </h3>
+                  </h4>
                   <p className="text-gray-600 mb-2">Parklands, Nairobi</p>
-                  <p className="text-gray-600 mb-3">
+                  <p className="text-gray-600 mb-2">
                     <Phone className="w-4 h-4 inline mr-2" />
                     +254 798 672239
                   </p>
-                  <p className="text-sm text-green-600 mb-3">14 years of operation</p>
-                  <button 
-                    onClick={() => handleWhatsApp('parklands')}
-                    className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors inline-flex items-center"
-                  >
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    WhatsApp
-                  </button>
+                  <p className="text-sm text-green-600">Growing Campus</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                     <MapPin className="w-5 h-5 text-orange-500 mr-3" />
                     Ngao Road Branch
-                  </h3>
+                  </h4>
                   <p className="text-gray-600 mb-2">Ngao Road, Nairobi</p>
-                  <p className="text-gray-600 mb-3">
+                  <p className="text-gray-600 mb-2">
                     <Phone className="w-4 h-4 inline mr-2" />
-                    +254 746656600
+                    +254 798 672239
                   </p>
-                  <p className="text-sm text-orange-500 mb-3">Growing campus</p>
-                  <button 
-                    onClick={() => handleWhatsApp('pangani')}
-                    className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors inline-flex items-center"
-                  >
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    WhatsApp
-                  </button>
+                  <p className="text-sm text-orange-500">
+                    3 Years of Experience
+                  </p>
                 </div>
               </div>
 
               <div className="bg-blue-600 text-white p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
+                <h4 className="text-xl font-semibold mb-4 flex items-center">
                   <Clock className="w-5 h-5 mr-3" />
                   School Hours
-                </h3>
+                </h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span>Monday - Friday:</span>
@@ -144,11 +150,16 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">
+                Send Us a Message
+              </h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Full Name *
                     </label>
                     <input
@@ -164,7 +175,10 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Email Address *
                     </label>
                     <input
@@ -182,7 +196,10 @@ const Contact = () => {
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Phone Number
                     </label>
                     <input
@@ -197,7 +214,10 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="branch" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="branch"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Preferred Branch
                     </label>
                     <select
@@ -216,7 +236,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="inquiryType" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="inquiryType"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Inquiry Type
                   </label>
                   <select
@@ -230,14 +253,19 @@ const Contact = () => {
                     <option value="admission">Admission Information</option>
                     <option value="curriculum">Curriculum Details</option>
                     <option value="fees">Fee Structure</option>
-                    <option value="activities">Extracurricular Activities</option>
+                    <option value="activities">
+                      Extracurricular Activities
+                    </option>
                     <option value="visit">Schedule a Visit</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Message *
                   </label>
                   <textarea
@@ -269,10 +297,12 @@ const Contact = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Why Contact Us?</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Why Contact Us?
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're here to answer all your questions and help you make the best decision 
-              for your child's education.
+              We're here to answer all your questions and help you make the best
+              decision for your child's education.
             </p>
           </div>
 
@@ -281,10 +311,12 @@ const Contact = () => {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Personalized Consultation</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">
+                Personalized Consultation
+              </h3>
               <p className="text-gray-600">
-                Get personalized advice about the best programs and activities for your child's 
-                unique needs and interests.
+                Get personalized advice about the best programs and activities
+                for your child's unique needs and interests.
               </p>
             </div>
 
@@ -292,10 +324,12 @@ const Contact = () => {
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Campus Tours</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">
+                Campus Tours
+              </h3>
               <p className="text-gray-600">
-                Schedule a visit to see our facilities, meet our teachers, and experience 
-                the Bright Sparks difference firsthand.
+                Schedule a visit to see our facilities, meet our teachers, and
+                experience the Bright Sparks difference firsthand.
               </p>
             </div>
 
@@ -303,10 +337,12 @@ const Contact = () => {
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-orange-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Admission Guidance</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">
+                Admission Guidance
+              </h3>
               <p className="text-gray-600">
-                Get step-by-step guidance through our admission process and learn about 
-                available scholarships and payment plans.
+                Get step-by-step guidance through our admission process and
+                learn about available scholarships and payment plans.
               </p>
             </div>
           </div>

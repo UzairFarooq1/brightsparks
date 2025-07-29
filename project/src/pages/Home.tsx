@@ -37,7 +37,7 @@ const Home = () => {
               Providing quality education from early childhood to secondary
               levels since 2010. We nurture young minds in a caring, inclusive
               environment with individualized attention and a comprehensive
-              curriculum including CBC, Islamic Studies, and CRE.
+              curriculum including CBE, Islamic Studies, and CRE.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -81,7 +81,7 @@ const Home = () => {
             {
               img: "../public/computer.jpg",
               title: "Quality Education",
-              desc: "CBC curriculum empowering students with computer skills",
+              desc: "CBE curriculum empowering students with computer skills",
               link: "/curriculum",
               color: "blue",
             },

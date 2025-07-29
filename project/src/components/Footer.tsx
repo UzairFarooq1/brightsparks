@@ -109,7 +109,7 @@ const Footer = () => {
                 <span className="text-gray-400">Secondary Education</span>
               </li>
               <li>
-                <span className="text-gray-400">CBC Curriculum</span>
+                <span className="text-gray-400">CBE Curriculum</span>
               </li>
               <li>
                 <span className="text-gray-400">Islamic Studies</span>
