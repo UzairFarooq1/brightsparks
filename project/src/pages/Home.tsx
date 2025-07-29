@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Mail } from "lucide-react";
 
-import brightvid from "./assets/brightvid.mp4";
-import happy from "./assets/happy.jpg";
-import computer from "./assets/computer.jpg";
-import classroom from "./assets/class.jpg";
-import unity from "./assets/unity.jpg";
-import campus from "./assets/campus.jpg";
+import brightvid from ".public/assets/brightvid.mp4";
+import happy from ".public/assets/happy.jpg";
+import computer from ".public/assets/computer.jpg";
+import classroom from ".public/assets/class.jpg";
+import unity from ".public/assets/unity.jpg";
+import campus from ".public/assets/campus.jpg";
 
 const Home = () => {
   const cards = [
