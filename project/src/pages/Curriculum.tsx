@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  GraduationCap,
-  BookOpenText,
-  Users,
-  Baby,
-  LayoutGrid,
-} from "lucide-react";
+import { GraduationCap, BookOpenText, Users, Baby } from "lucide-react";
 
 const Curriculum = () => {
   const stages = [

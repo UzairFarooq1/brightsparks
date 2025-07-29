@@ -1,14 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Star,
-  Users,
-  Award,
-  BookOpen,
-  ArrowRight,
-  Phone,
-  Mail,
-} from "lucide-react";
+import { ArrowRight, Phone, Mail } from "lucide-react";
 
 const Home = () => {
   return (
