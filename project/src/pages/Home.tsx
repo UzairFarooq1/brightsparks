@@ -2,14 +2,45 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Mail } from "lucide-react";
 
+import brightvid from "./assets/brightvid.mp4";
+import happy from "./assets/happy.jpg";
+import computer from "./assets/computer.jpg";
+import classroom from "./assets/class.jpg";
+import unity from "./assets/unity.jpg";
+import campus from "./assets/campus.jpg";
+
 const Home = () => {
+  const cards = [
+    {
+      img: computer,
+      title: "Quality Education",
+      desc: "CBE curriculum empowering students with computer skills",
+      link: "/curriculum",
+      color: "blue",
+    },
+    {
+      img: classroom,
+      title: "Modern Campuses",
+      desc: "Branches in Pangani & Parklands with modern facilities.",
+      link: "/branches",
+      color: "green",
+    },
+    {
+      img: unity,
+      title: "Beyond Academics",
+      desc: "Sports, arts, coding & unique programs like horse riding.",
+      link: "/activities",
+      color: "orange",
+    },
+  ];
+
   return (
     <div>
       {/* Hero Section */}
       <section className="relative text-white py-20 h-[90vh] overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover z-0"
-          src="../public/brightvid.mp4"
+          src={brightvid}
           autoPlay
           muted
           loop
@@ -48,7 +79,7 @@ const Home = () => {
           </div>
           <div className="hidden md:block">
             <img
-              src="../public/happy.jpg"
+              src={happy}
               alt="Happy students"
               className="rounded-xl shadow-lg w-full h-auto"
             />
@@ -69,29 +100,7 @@ const Home = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 px-4">
-          {[
-            {
-              img: "../public/computer.jpg",
-              title: "Quality Education",
-              desc: "CBE curriculum empowering students with computer skills",
-              link: "/curriculum",
-              color: "blue",
-            },
-            {
-              img: "../public/class.jpg",
-              title: "Modern Campuses",
-              desc: "Branches in Pangani & Parklands with modern facilities.",
-              link: "/branches",
-              color: "green",
-            },
-            {
-              img: "../public/unity.jpg",
-              title: "Beyond Academics",
-              desc: "Sports, arts, coding & unique programs like horse riding.",
-              link: "/activities",
-              color: "orange",
-            },
-          ].map(({ img, title, desc, link, color }, i) => (
+          {cards.map(({ img, title, desc, link, color }, i) => (
             <div
               key={i}
               className="bg-white rounded-xl shadow-lg overflow-hidden"
@@ -117,7 +126,7 @@ const Home = () => {
       {/* Call to Action with Image Background */}
       <section className="relative py-20 text-white">
         <img
-          src="../public/campus.jpg"
+          src={campus}
           alt="School campus"
           className="absolute inset-0 w-full h-full object-cover z-0 opacity-30"
         />
