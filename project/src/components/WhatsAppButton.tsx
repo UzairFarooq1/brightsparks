@@ -25,7 +25,7 @@ const WhatsAppButton = () => {
       <div className="group relative">
         {/* Main WhatsApp Button */}
         <img
-          src="../public/whatsapp.png" // Replace with the correct path to WhatsApp icon
+          src="/assets/whatsapp.png" // Replace with the correct path to WhatsApp icon
           alt="WhatsApp"
           className="w-12 h-12"
         />
