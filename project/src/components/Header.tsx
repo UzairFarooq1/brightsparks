@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
-      {/* Top Contact Bar */}
+      {/* Top Contact Bar
       <div className="bg-skyish text-white text-sm py-2">
         <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex gap-4 flex-wrap justify-center sm:justify-start">
@@ -38,8 +38,7 @@ const Header = () => {
             <span>info@brightsparks.ac.ke</span>
           </div>
         </div>
-      </div>
-
+      </div> */}
       {/* Main Nav */}
       <nav className="container mx-auto px-4 py-4 relative">
         <div className="flex justify-between items-center">
