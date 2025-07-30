@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Mail } from "lucide-react";
 
 import brightvid from "/assets/brightvid.mp4";
-import happy from "/assets/happy.jpg";
+import happy from "/assets/graduation.jpg";
 import computer from "/assets/computer.jpg";
 import classroom from "/assets/class.jpg";
 import unity from "/assets/unity.jpg";
