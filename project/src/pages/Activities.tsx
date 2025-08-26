@@ -134,8 +134,24 @@ const Activities = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {activities.map((activity, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    x: index % 2 === 0 ? -60 : 60,
+                    y: 40,
+                  },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    y: 0,
+                    transition: { type: "spring", stiffness: 60, damping: 18 },
+                  },
+                }}
                 className="bg-gray-50 p-6 rounded-2xl hover:shadow-xl transition-shadow border border-gray-100"
               >
                 <activity.icon className="w-12 h-12 text-blue-600 mb-4" />
@@ -178,7 +194,7 @@ const Activities = () => {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

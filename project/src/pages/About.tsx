@@ -155,8 +155,24 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    x: index % 2 === 0 ? -60 : 60,
+                    y: 40,
+                  },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    y: 0,
+                    transition: { type: "spring", stiffness: 60, damping: 18 },
+                  },
+                }}
                 className="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow"
               >
                 <value.icon className="w-10 h-10 text-blue-600 mx-auto mb-4" />
@@ -164,7 +180,7 @@ const About = () => {
                   {value.title}
                 </h3>
                 <p className="text-gray-600 text-sm">{value.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

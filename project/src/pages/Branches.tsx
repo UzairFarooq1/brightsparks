@@ -110,8 +110,24 @@ const Branches = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {branches.map((branch, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    x: index % 2 === 0 ? -60 : 60,
+                    y: 40,
+                  },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    y: 0,
+                    transition: { type: "spring", stiffness: 60, damping: 18 },
+                  },
+                }}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <div className="bg-custom-gradient text-white p-6">
@@ -169,7 +185,7 @@ const Branches = () => {
                     Contact This Branch
                   </button>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

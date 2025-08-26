@@ -127,8 +127,17 @@ const Home = () => {
             <motion.div
               key={i}
               variants={{
-                hidden: { opacity: 0, y: 40 },
-                visible: { opacity: 1, y: 0 },
+                hidden: {
+                  opacity: 0,
+                  x: i % 2 === 0 ? -60 : 60,
+                  y: 40,
+                },
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                  y: 0,
+                  transition: { type: "spring", stiffness: 60, damping: 18 },
+                },
               }}
               className="bg-white rounded-xl shadow-md overflow-hidden transition hover:shadow-xl"
             >

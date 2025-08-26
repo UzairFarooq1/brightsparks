@@ -79,8 +79,24 @@ const Curriculum = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {stages.map((stage, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    x: index % 2 === 0 ? -60 : 60,
+                    y: 40,
+                  },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    y: 0,
+                    transition: { type: "spring", stiffness: 60, damping: 18 },
+                  },
+                }}
                 className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow text-center"
               >
                 <stage.icon className="w-12 h-12 text-green-600 mx-auto mb-4" />
@@ -94,7 +110,7 @@ const Curriculum = () => {
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {stage.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
