@@ -9,6 +9,7 @@ import {
   Clock,
   MapPin,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const About = () => {
   const values = [
@@ -46,9 +47,20 @@ const About = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="pt-20"
+    >
       {/* Hero Section */}
-      <section className="relative bg-custom-gradient text-white py-20 overflow-hidden">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7 }}
+        className="relative bg-custom-gradient text-white py-20 overflow-hidden"
+      >
         <img
           src="https://source.unsplash.com/1600x900/?school,classroom"
           alt="School Environment"
@@ -64,7 +76,7 @@ const About = () => {
             multiple branches in Kenya.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Mission */}
       <section className="py-20 bg-white">
@@ -228,7 +240,7 @@ const About = () => {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

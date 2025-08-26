@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 import brightvid from "/assets/brightvid.mp4";
 import happy from "/assets/graduation.jpg";
@@ -35,7 +36,11 @@ const Home = () => {
   ];
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+    >
       {/* Hero Section */}
       <section className="relative text-white py-16 md:py-20 h-[90vh] md:h-[85vh] overflow-hidden">
         <video
@@ -89,7 +94,13 @@ const Home = () => {
 
       {/* Cards Section */}
       <section className="py-16 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7 }}
+          className="container mx-auto px-4 text-center mb-12"
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             Why Choose Bright Sparks School?
           </h2>
@@ -97,12 +108,28 @@ const Home = () => {
             We provide a comprehensive education that prepares students for
             success in academics, character development, and life skills.
           </p>
-        </div>
-
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 px-4">
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { staggerChildren: 0.15 },
+            },
+          }}
+          className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 px-4"
+        >
           {cards.map(({ img, title, desc, link, color }, i) => (
-            <div
+            <motion.div
               key={i}
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0 },
+              }}
               className="bg-white rounded-xl shadow-md overflow-hidden transition hover:shadow-xl"
             >
               <img src={img} alt={title} className="w-full h-48 object-cover" />
@@ -118,9 +145,9 @@ const Home = () => {
                   Learn More <ArrowRight className="w-4 h-4 ml-1" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* Call to Action Section */}
@@ -158,7 +185,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

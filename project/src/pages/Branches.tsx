@@ -8,6 +8,7 @@ import {
   Award,
   Building,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Branches = () => {
   const branches = [
@@ -80,9 +81,20 @@ const Branches = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="pt-20"
+    >
       {/* Hero Section */}
-      <section className="bg-custom-gradient text-white py-20">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7 }}
+        className="bg-custom-gradient text-white py-20"
+      >
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Our Branches</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
@@ -91,7 +103,7 @@ const Branches = () => {
             our students deserve.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Branches Grid */}
       <section className="py-20 bg-gray-50">
@@ -274,7 +286,7 @@ const Branches = () => {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 
