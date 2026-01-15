@@ -14,28 +14,24 @@ import { motion } from "framer-motion";
 const About = () => {
   const values = [
     {
+      icon: Lightbulb,
+      title: "Innovation",
+      description: "Embracing new ideas and approaches in education.",
+    },
+    {
       icon: Heart,
-      title: "Nurturing Environment",
-      description:
-        "We provide a caring, inclusive atmosphere where every child feels valued and supported in their learning journey.",
+      title: "Partnerships",
+      description: "Collaborating with families and communities.",
     },
     {
       icon: Target,
-      title: "Individualized Attention",
-      description:
-        "Our dedicated teachers focus on each student's unique needs and potential to help them excel academically and personally.",
+      title: "Inclusivity",
+      description: "Providing an open and welcoming environment for all.",
     },
     {
       icon: Shield,
-      title: "Character Development",
-      description:
-        "We instill strong moral values and character traits that prepare students to become responsible leaders of tomorrow.",
-    },
-    {
-      icon: Lightbulb,
-      title: "Academic Excellence",
-      description:
-        "Our proven track record of academic achievement demonstrates our commitment to educational excellence and student success.",
+      title: "Intellectual Curiosity",
+      description: "Encouraging a love for learning and exploration.",
     },
   ];
 
@@ -51,7 +47,6 @@ const About = () => {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
-      className="pt-20"
     >
       {/* Hero Section */}
       <motion.section
@@ -78,7 +73,7 @@ const About = () => {
         </div>
       </motion.section>
 
-      {/* Mission */}
+      {/* Guiding Principles */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
@@ -89,7 +84,8 @@ const About = () => {
               <p className="text-gray-600 mb-6 leading-relaxed text-lg">
                 At Bright Sparks School, we are committed to creating a
                 welcoming and inclusive environment for students of all
-                backgrounds...
+                backgrounds and to nurture students who Lead, Think and Advocate
+                for Self, Community and Nation.
               </p>
               <div className="bg-skyish text-white p-6 rounded-lg">
                 <h3 className="text-2xl font-semibold mb-2">Our Motto</h3>
