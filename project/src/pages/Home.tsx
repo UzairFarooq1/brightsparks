@@ -160,19 +160,17 @@ const Home = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="relative py-20 text-white">
+      <section className="relative py-20 bg-custom-gradient text-white">
         <img
-          src={campus}
-          alt="School campus"
+          src="/assets/family.jpg"
+          alt="School family"
           className="absolute inset-0 w-full h-full object-cover z-0 opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-700 to-sky-400 opacity-80 z-0" />
-
         <div className="relative z-10 container mx-auto text-center px-4">
           <h3 className="text-2xl sm:text-3xl font-bold mb-4">
             Ready to Join Our School Family?
           </h3>
-          <p className="text-lg sm:text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl mb-8 text-blue max-w-2xl mx-auto">
             Contact us today to learn more about admissions and schedule a visit
             to our campus.
           </p>

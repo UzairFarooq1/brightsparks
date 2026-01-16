@@ -50,10 +50,17 @@ const Curriculum = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7 }}
-        className="bg-custom-gradient text-white py-20"
+        className="bg-custom-gradient text-white py-20 relative overflow-hidden"
       >
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">Our Curriculum</h1>
+        <img
+          src="/assets/curriculum.jpg"
+          alt="School Curriculum"
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-30"
+        />
+        <div className="relative container mx-auto px-4 text-center z-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Our Curriculum
+          </h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             Bright Sparks School follows Kenya's Competency-Based Curriculum
             (CBC) designed to equip learners with the skills, knowledge, and
@@ -116,9 +123,14 @@ const Curriculum = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-custom-gradient text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">
+      <section className="bg-custom-gradient text-white py-20 relative">
+        <img
+          src="/assets/future.jpg"
+          alt="School future"
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-30"
+        />
+        <div className="relative container mx-auto px-4 text-center z-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Explore the Future of Learning
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">

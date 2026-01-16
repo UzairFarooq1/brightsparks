@@ -92,10 +92,15 @@ const Branches = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7 }}
-        className="bg-custom-gradient text-white py-20"
+        className="relative bg-custom-gradient text-white py-20 overflow-hidden"
       >
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">Our Branches</h1>
+        <img
+          src="/assets/branch.jpg"
+          alt="School branches"
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-30 blur-sm "
+        />
+        <div className="relative container mx-auto px-4 text-center z-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Branches</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             Bright Sparks School operates multiple branches across Nairobi, each
             offering the same high-quality education and nurturing environment
@@ -276,9 +281,16 @@ const Branches = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-20 bg-custom-gradient text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Visit?</h2>
+      <section className="py-20 bg-custom-gradient text-white relative">
+        <img
+          src="/assets/visit_us.jpg"
+          alt="School visit"
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-30"
+        />
+        <div className="relative container mx-auto px-4 text-center z-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Visit?
+          </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Contact any of our branches to schedule a visit and see why parents
             trust Bright Sparks School with their children's education.

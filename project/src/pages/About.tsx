@@ -57,7 +57,7 @@ const About = () => {
         className="relative bg-custom-gradient text-white py-20 overflow-hidden"
       >
         <img
-          src="https://source.unsplash.com/1600x900/?school,classroom"
+          src="/assets/classroom.jpg"
           alt="School Environment"
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
@@ -87,7 +87,7 @@ const About = () => {
                 backgrounds and to nurture students who Lead, Think and Advocate
                 for Self, Community and Nation.
               </p>
-              <div className="bg-skyish text-white p-6 rounded-lg">
+              <div className="bg-blue-400 text-white p-6 rounded-lg">
                 <h3 className="text-2xl font-semibold mb-2">Our Motto</h3>
                 <p className="text-xl italic">
                   "Learners Today, Leaders Tomorrow"
@@ -213,14 +213,17 @@ const About = () => {
       </section>
 
       {/* Journey */}
-      <section className="py-20 bg-custom-gradient text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
-            <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto">
-              From humble beginnings to a trusted institution.
-            </p>
-          </div>
+      <section className="py-20 bg-custom-gradient text-white relative">
+        <img
+          src="/assets/journey.jpg"
+          alt="School journey"
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-30"
+        />
+        <div className="relative container mx-auto px-4 text-center z-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
+          <p className="text-lg md:text-xl text-blue max-w-3xl mx-auto">
+            From humble beginnings to a trusted institution.
+          </p>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {[
