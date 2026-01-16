@@ -104,10 +104,15 @@ const Activities = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7 }}
-        className="bg-custom-gradient text-white py-20"
+        className="bg-custom-gradient text-white py-20 relative overflow-hidden"
       >
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">
+        <img
+          src="/assets/activities.jpg"
+          alt="School Activities"
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        />
+        <div className="relative container mx-auto px-4 text-center z-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Extracurricular Activities
           </h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
