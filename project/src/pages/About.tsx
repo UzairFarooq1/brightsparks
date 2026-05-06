@@ -73,69 +73,74 @@ const About = () => {
         </div>
       </motion.section>
 
-      {/* Guiding Principles */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                Our Mission
-              </h2>
-              <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                At Bright Sparks School, we are committed to creating a
-                welcoming and inclusive environment for students of all
-                backgrounds and to nurture students who Lead, Think and Advocate
-                for Self, Community and Nation.
-              </p>
-              <div className="bg-blue-400 text-white p-6 rounded-lg">
-                <h3 className="text-2xl font-semibold mb-2">Our Motto</h3>
-                <p className="text-xl italic">
-                  "Learners Today, Leaders Tomorrow"
-                </p>
-              </div>
-            </div>
-            <img
-              src="/assets/graduation.jpg"
-              alt="Students Learning"
-              className="rounded-lg shadow-md w-full h-auto object-cover hidden md:block"
-            />
-          </div>
+{/* Guiding Principles */}
+<section className="py-20 bg-white">
+  <div className="container mx-auto px-4">
+    <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+      <div>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+          Our Mission
+        </h2>
+        <p className="text-gray-600 mb-6 leading-relaxed text-lg">
+          To nurture students who Lead, Think and Advocate for Self,
+          Community and Nation.
+        </p>
 
-          {/* Vision */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <img
-              src="/assets/storytelling.jpg"
-              alt="School Vision"
-              className="rounded-lg shadow-md w-full h-auto object-cover hidden md:block"
-            />
-            <div className="bg-gray-50 p-6 md:p-8 rounded-lg">
-              <h3 className="text-3xl font-bold text-gray-800 mb-6">
-                Our Vision
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                To be the leading educational institution in Kenya...
-              </p>
-              <h4 className="text-xl font-semibold text-gray-800 mb-4">
-                Why Choose Us?
-              </h4>
-              <ul className="space-y-3">
-                {[
-                  "Over 15 years of educational experience",
-                  "Multiple convenient branch locations",
-                  "Modern facilities and secure learning environment",
-                  "Diverse extracurricular activities",
-                  "CBE curriculum with religious education",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3" />
-                    <span className="text-gray-600">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+        <div className="bg-blue-400 text-white p-6 rounded-lg">
+          <h3 className="text-2xl font-semibold mb-2">Our Motto</h3>
+          <p className="text-xl italic">
+            "Learners Today, Leaders Tomorrow"
+          </p>
         </div>
-      </section>
+      </div>
+
+      <img
+        src="/assets/graduation.jpg"
+        alt="Students Learning"
+        className="rounded-lg shadow-md w-full h-auto object-cover hidden md:block"
+      />
+    </div>
+
+    {/* Vision */}
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      <img
+        src="/assets/storytelling.jpg"
+        alt="School Vision"
+        className="rounded-lg shadow-md w-full h-auto object-cover hidden md:block"
+      />
+
+      <div className="bg-gray-50 p-6 md:p-8 rounded-lg">
+        <h3 className="text-3xl font-bold text-gray-800 mb-6">
+          Our Vision
+        </h3>
+
+        <p className="text-gray-600 mb-6 leading-relaxed text-lg">
+          A development program that provides a holistic approach to
+          cultivating leaders through Self Awareness, Team Leadership and
+          Strategic Thinking.
+        </p>
+
+        <h4 className="text-xl font-semibold text-gray-800 mb-4">
+          Our Core Values
+        </h4>
+
+        <ul className="space-y-3">
+          {[
+            "Innovation – Embracing new ideas and approaches in education",
+            "Partnerships – Collaborating with families and communities",
+            "Inclusivity – Providing an open and welcoming environment for all",
+            "Intellectual Curiosity – Encouraging a love for learning and exploration",
+          ].map((item, index) => (
+            <li key={index} className="flex items-start">
+              <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3" />
+              <span className="text-gray-600">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Core Values */}
       <section className="py-20 bg-gray-50">
